@@ -2,6 +2,10 @@ function calulateAkan() {
     //takes input from the date selector
     
     var userDateInput = document.getElementById("inputDate").value;
+    if(userDateInput="yyyy-mm-dd"){
+        alert('Enter Valid Date');
+        return false;
+    }
   
     var gender ;
     //the if statement is to check what radio button is checked.
