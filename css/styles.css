@@ -31,3 +31,8 @@ header {
     margin-top: 65px;
     text-align: center;
 }
+#form{
+    padding-top: 3%;
+    padding-left: 40%;
+    width:70%;
+  }
