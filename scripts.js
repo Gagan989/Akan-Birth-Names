@@ -2,7 +2,7 @@ function calulateAkan() {
     //takes input from the date selector
     
     var userDateInput = document.getElementById("inputDate").value;
-    if(userDateInput="yyyy-mm-dd"){
+    if(userDateInput==="yyyy-mm-dd"){//checks if nothing has been entered and the user returns the default
         alert('Enter Valid Date');
         return false;
     }
@@ -12,7 +12,7 @@ function calulateAkan() {
     if (document.getElementById('maleChecked').checked) {
         //to check if male is checked
      gender = document.getElementById('maleChecked').value;
-     }
+    }
      else if(document.getElementById('femaleChecked').checked){
          //to check if female is checked
        gender = document.getElementById('femaleChecked').value;
@@ -30,15 +30,15 @@ function calulateAkan() {
     if (dayofBirth < 0){//checks if dayofBirth is negative and converts to positive
         dayofBirth = dayofBirth * -1;
         alert(dayofBirth);
-      }
+    }
       else if(dayofBirth == 0){
         dayofBirth += 7;//the day of  birth that returns by 0 is Saturday so this avoids printing out a name thats Sunday
         alert(dayofBirth);
-      }
+    }
       else {
         dayofBirth = parseInt((((century / 4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10))+day) % 7);
         alert(dayofBirth);
-      }
+    }
     
     if (gender ==="M"){
     //checks if gender is male
@@ -47,7 +47,7 @@ function calulateAkan() {
     alert("Your Akan Name is "+ mName);
 
     document.getElementById("displayName").innerHTML =  "Your Akan Name is "+ mName;//write value in html element p
-}
+    }
     else {
      //checks if gender is female
 
@@ -55,5 +55,5 @@ function calulateAkan() {
 
     alert("Your Akan Name is "+ fName);
     document.getElementById("displayName").innerHTML = "Your Akan Name is "+ fName;//write value in html element p
-  }
+    }
 }
