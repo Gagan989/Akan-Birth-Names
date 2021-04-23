@@ -26,3 +26,7 @@ header {
     font-weight: bolder;
     font-size: larger;
 }
+#h2 {
+    margin-top: 65px;
+    text-align: center;
+}
