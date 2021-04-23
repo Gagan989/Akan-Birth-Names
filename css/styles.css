@@ -1,3 +1,28 @@
+body {
+    background-color: gray;
+}
+h1 {
+    text-align: center;
+    font-size: 300px;
+    text-decoration: underline;
+    font-family: 'Times New Roman', Times, serif;
+    color: darkmagenta;
+    margin-top: 40px;
+}
+
 header {
-    
+    background-image: url(../Images/ghana.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    margin-top: 50px;
+}
+#h1 {
+    align-items: center;
+    justify-content: center;
+    color: orangered;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: larger;
 }
