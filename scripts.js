@@ -1,7 +1,9 @@
-function calulateAkan()
+function calulateAkan() {
     //takes input from the date selector
     
-    var userDateInput = document.getElementById("inputDate").value;
+    var userYearInput = document.getElementById("inputYear").value;
+    var userDayInput = document.getElementById("inputDay").value;
+    var userMonthInput = document.getElementById("inputMonth").value;
   
     var gender ;
     //the if statement is to check what radio button is checked.
@@ -14,30 +16,44 @@ function calulateAkan()
        gender = document.getElementById('femaleChecked').value;
     }
 
-    var century = parseInt(userDateInput.slice(0,2)); //slice date  to get century
-    var year = parseInt(userDateInput.slice(2,4)); //slice date to get year
-    var month = parseInt(userDateInput.slice(5,7)); //slice date to get month
-    var day = parseInt(userDateInput.slice(8,10)); //slice date to get day
+    var century = parseInt(userYearInput.slice(0,2)); //slice date  to get century
+    var year = parseInt(userYearInput.slice(2,4)); //slice date to get year
+    var month = parseInt(userMonthInput); // to get month
+    var day = parseInt(userDayInput); //slice date to get day
     var maleName = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];//put in an array for ease of access
     var femaleName = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];//put in an array for ease of access
 
       //to calculate exact day of birth
-  var dayofBirth = parseInt(((century / 4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10))+day) % 7;
+    var dayofBirth = parseInt(((century / 4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10))+day) % 7;
+    if (dayofBirth < 0){
 
-  if (gender ==="M"){
+        dayofBirth = dayofBirth*-1;
+        alert(dayofBirth);
+      }
+      else if(dayofBirth == 0){
+    
+        dayofBirth = 1;
+        alert(dayofBirth);
+      }
+      else {
+        dayofBirth = parseInt(((century / 4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10))+day) % 7;
+        alert(dayofBirth);
+      }
+    
+    if (gender ==="M"){
     //checks if gender is male
     var mName =  maleName[dayofBirth-1];//find out value of gender in index [dayofBirth-1]
 
-    alert("Your Akhan Name is "+ mName);
+    alert("Your Akan Name is "+ mName);
 
-    document.getElementById("displayName").innerHTML =  "Your Akhan Name is "+ mName;//write value in html element p
+    document.getElementById("displayName").innerHTML =  "Your Akan Name is "+ mName;//write value in html element p
 }
-   else {
+    else {
      //checks if gender is female
 
     var fName = femaleName[dayofBirth-1];//find out value of gender in index [dayofBirth-1]
 
-    alert("Your Akhan Name is "+ fName);
-    document.getElementById("displayName").innerHTML = "Your Akhan Name is "+ fName;//write value in html element p
+    alert("Your Akan Name is "+ fName);
+    document.getElementById("displayName").innerHTML = "Your Akan Name is "+ fName;//write value in html element p
   }
 }
