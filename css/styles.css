@@ -36,3 +36,10 @@ header {
     padding-left: 40%;
     width:70%;
   }
+#h3{
+    font-size: x-large;
+    font-family: cursive;
+    margin-top: 65px;
+    padding-top: 60px;
+    font-weight: bolder;
+}
