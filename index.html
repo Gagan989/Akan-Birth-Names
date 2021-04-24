@@ -77,18 +77,47 @@
     <h3>Find out your Akan name</h3>
     <p>Enter your details in the form below</p>
         </div>
-        
 
+        <div class="panel col-sm-6">
+        <form>
+            <div class="form-group">
+                <label for="monthDay" class="labels">Day</label>
+                <input type="number" placeholder="Day" class="form-control" id="monthday" 
+                    required min="1" max="31">
+            </div> 
+            <div class="form-group">
+                <label for="monthDay" class="labels">Month</label>
+                <input type="number" placeholder="Month" class="form-control" id="month"
+                    required min="1" max="12">
+            </div>
+            <div class="form-group">
+                <label for="year" class="labels">Year</label>
+                <input type="number" placeholder="Year" class="form-control" id="year" 
+                    required min="0" max="99">
+            </div>        
+            <div class="form-group">
+                <label for="cemtury" class="labels">Century</label>
+                <input type="number" class="form-control" placeholder="Century" id="century"
+                    required min="12" max="20">
+            </div>       
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Select gender</label>
+            <div class="col-sm-13">
+                <select class="form-control " id="gender">
+                    <option value=""></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+        </div>
 
+        <br>
+        <a href="#result"><button type="button" name="button" class="btn btn-primary mn-2"
+                onclick="checkDayOfMonth()">Submit</button></a>
+        <h1 id="result"></h1>
+        </form>
 
-      
-
-
-
-
-
-
-
-    <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
