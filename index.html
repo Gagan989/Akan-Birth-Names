@@ -78,33 +78,35 @@
          <form id = "getVariables">
            <div class="form-group">
              <label for="InputNumber">Date of Birth:</label>
-             <input type="number" class="form-control" id="inputYear" name ="birthDate" placeholder="year">
+             <input type="date" class="form-control" id="inputDate" name="birthDate"> 
+            <!-- <input type="number" class="form-control" id="inputYear" name ="birthDate" placeholder="year">
              <input type="number" class="form-control" id="inputMonth" name ="birthDate" placeholder="month">
-             <input type="number" class="form-control" id="inputDay" name ="birthDate" placeholder="Day">
+             <input type="number" class="form-control" id="inputDay" name ="birthDate" placeholder="Day"> -->
            </div>
  
     </div>
              <div class="form-check">
-                <input class="form-check-input" type="radio" name="personGender" id="maleChecked" value="M">
+                <input class="form-check-input" type="radio" name="personGender" id="maleChecked" value="M" checked>
                <label class="form-check-label" for="Radios1">
                  Male
                </label>
              </div>
              <div class="form-check">
-                <input class="form-check-input" type="radio" name="personGender" id="femaleChecked" value="F" checked>
+                <input class="form-check-input" type="radio" name="personGender" id="femaleChecked" value="F">
                <label class="form-check-label" for="Radios2">
                  Female
                </label>
              </div>
-             <button type="submit" class="btn btn-primary" onclick="variables()">Submit</button>
+             <button type="submit" class="btn btn-primary" onclick="calculateAkan()">Submit</button>
            </form>
  
         </div>
 
         <div class="panel">
             <p id ="displayName"></p>
+
         </div>
       
-    <script src="scripts.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>
