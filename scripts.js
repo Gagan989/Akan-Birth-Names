@@ -1,59 +1,35 @@
-function calulateAkan() {
-    //takes input from the date selector
-    
-    var userDateInput = document.getElementById("inputDate").value;
-    if(userDateInput==="yyyy-mm-dd"){//checks if nothing has been entered and the user returns the default
-        alert('Enter Valid Date');
-        return false;
-    }
-  
-    var gender ;
-    //the if statement is to check what radio button is checked.
-    if (document.getElementById('maleChecked').checked) {
-        //to check if male is checked
-     gender = document.getElementById('maleChecked').value;
-    }
-     else if(document.getElementById('femaleChecked').checked){
-         //to check if female is checked
-       gender = document.getElementById('femaleChecked').value;
-    }
+var akanMaleName = ["Kwasi!", "Kwadwo!", "Kwabena!", "Kwaku!", "Yaw!", "Kofi!", "Kwame!"]
+var akanFemaleName = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"]
 
-    var century = parseInt(userDateInput.slice(0,2)); //slice date  to get century
-    var year = parseInt(userDateInput.slice(2,4)); //slice date to get year
-    var month = parseInt(userDateInput.slice(5,7)); // to get month
-    var day = parseInt(userDateInput.slice(8,10)); //slice date to get day
-    var maleName = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];//put in an array for ease of access
-    var femaleName = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];//put in an array for ease of access
+function checkDayOfMonth() {
+  var century = parseInt(document.getElementById("century").value);
+  var year = parseInt(document.getElementById("year").value);
+  var month = parseInt(document.getElementById("month").value);
+  var dayOfMonth = parseInt(document.getElementById("monthday").value);
+  var gender = document.getElementById("gender").value;
 
-      //to calculate exact day of birth
-    var dayofBirth = parseInt(((century / 4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10))+day) % 7;
-    if (dayofBirth < 0){//checks if dayofBirth is negative and converts to positive
-        dayofBirth = dayofBirth * -1;
-        
+  var CC = century;
+  var YY = year;
+  var MM = month;
+  var DD = dayOfMonth;
+  var d = parseInt(((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7
+  if (CC < 12 || CC > 20) {
+    alert("Not a valid Centuary")
+  } else {
+    if (YY < 0 || 2050 <= YY) {
+      alert("Invalid Year")
+    } else
+    if (MM <= 0 || MM > 12) {
+      alert("Enter a valid Month")
+    } else
+    if (DD <= 0 || DD > 31) {
+      alert("Invalid date")
+    } else
+    if (gender === "Male") {
+      alert("Your Akan name is " + akanMaleName[d])
     }
-      else if(dayofBirth == 0){
-        dayofBirth += 7;//the day of  birth that returns by 0 is Saturday so this avoids printing out a name thats Sunday
-        
+    if (gender === "Female") {
+      alert("Your Akan name is " + akanFemaleName[d])
     }
-      else {
-        dayofBirth = parseInt((((century / 4) - 2 * century - 1) + ((5 * year / 4)) + ((26 * (month + 1) / 10))+day) % 7);
-        
-    }
-    
-    if (gender ==="M"){
-    //checks if gender is male
-    var mName =  maleName[dayofBirth-1];//find out value of gender in index [dayofBirth-1]
-
-    alert("Your Akan Name is "+ mName);
-
-    document.getElementById("displayName").innerHTML =  "Your Akan Name is "+ mName;//write value in html element p
-    }
-    else {
-     //checks if gender is female
-
-    var fName = femaleName[dayofBirth-1];//find out value of gender in index [dayofBirth-1]
-
-    alert("Your Akan Name is "+ fName);
-    document.getElementById("displayName").innerHTML = "Your Akan Name is "+ fName;//write value in html element p
-    }
+  }
 }
